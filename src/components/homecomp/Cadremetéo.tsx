@@ -1,11 +1,16 @@
-import imgmetéo from "../../assets/img/photo_2026-01-30_08-08-15.png";
 import "../homecomp/home.css";
-export default function Cadremetéo() {
+import type { FC, SVGProps } from "react";
+type texttwo = {
+  text01: number;
+  text02: string;
+  Icon: FC<SVGProps<SVGSVGElement>>;
+};
+export default function Cadremetéo({ text01, text02, Icon }: texttwo) {
   return (
     <div className="flex flex-col justify-center items-center self-center rounded-[80px] glass-card px-40 pb-4">
-      <img className="w-70 h-70" src={imgmetéo} />
-      <div className="txt02">26°C</div>
-      <div className="txt03">Expect high rain today.</div>
+      <Icon className="w-16 h-16" />
+      <div className="txt02">{text01} °C</div>
+      <div className="txt03">{text02}</div>
     </div>
   );
 }
