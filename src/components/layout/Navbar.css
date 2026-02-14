@@ -20,7 +20,7 @@
 .itme {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
   transition: all 0.3s ease;
 }
 .itme:hover {
@@ -32,8 +32,8 @@
 .text {
   color: #fff;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: normal;
 }

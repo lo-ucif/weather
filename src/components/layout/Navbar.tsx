@@ -7,8 +7,8 @@ import Queastionicon from "../icon/Queastionicon";
 
 export default function Navbar() {
   return (
-    <div className="navbar scaleIn flex flex-row w-fit py-3 px-6 gap-8 sm:gap-8 glass-card justify-center items-center rounded-[40px]">
-      <NavLink to="/" end>
+    <div className="navbar scaleIn flex flex-row w-fit py-3 px-10 gap-8 sm:gap-8 glass-card justify-center items-center rounded-[40px]">
+      <NavLink to="/" >
         {({ isActive }) => (
           <div className={`itme  ${isActive ? "active" : ""}`}>
             <Homeicon />
