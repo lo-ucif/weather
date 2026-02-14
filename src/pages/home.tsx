@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchWeather = async () => {
       setLoading(true);
-      const data = await getWeather();
+      const data = await getWeather(36.75, 3.06, "Algiers");
       setWeather(data);
       setLoading(false);
     };

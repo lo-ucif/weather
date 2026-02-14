@@ -10,9 +10,26 @@ export interface WeatherData {
   location: string;
 }
 
-export const getWeather = async (): Promise<WeatherData | null> => {
+export const getWeather = async (
+  customLat?: number,
+  customLon?: number,
+  customLocation?: string,
+): Promise<WeatherData | null> => {
   try {
-    const { latitude, longitude, location } = await getUserLocation();
+    let latitude: number;
+    let longitude: number;
+    let location: string;
+
+    if (customLat && customLon) {
+      latitude = customLat;
+      longitude = customLon;
+      location = customLocation || "Custom Location";
+    } else {
+      const userLocation = await getUserLocation();
+      latitude = userLocation.latitude;
+      longitude = userLocation.longitude;
+      location = userLocation.location;
+    }
 
     const response = await axios.get("https://api.open-meteo.com/v1/forecast", {
       params: {
@@ -31,7 +48,7 @@ export const getWeather = async (): Promise<WeatherData | null> => {
       precipitation: current.precipitation,
       wind_speed_10m: current.wind_speed_10m,
       weather_code: current.weather_code,
-      location: location,
+      location,
     };
   } catch (error) {
     console.error("Error fetching weather:", error);

@@ -1,52 +1,55 @@
 import type { FC, SVGProps } from "react";
 
 import SunIcon from "../components/svg/Sun";
-import PartlyCloudyIcon from "../components/svg/Sun";
-import CloudIcon from "../components/svg/Sun";
+import PartlyCloudyIcon1 from "../components/svg/Partcloud1";
+import PartlyCloudyIcon2 from "../components/svg/Partcloud2";
+import CloudIcon from "../components/svg/Cloudy";
 import FogIcon from "../components/svg/Fog";
-import DrizzleIcon from "../components/svg/Sun";
+import DrizzleIcon1 from "../components/svg/drizzle01";
+import DrizzleIcon2 from "../components/svg/drizzle02";
+import DrizzleIcon3 from "../components/svg/drizzle03";
 import RainIcon from "../components/svg/Rain";
-import SnowIcon from "../components/svg/Snow";
-import ShowerIcon from "../components/svg/Sun";
-import ThunderstormIcon from "../components/svg/Sun";
+import SnowIcon1 from "../components/svg/Snow";
+import SnowIcon2 from "../components/svg/Snow";
+import SnowIcon3 from "../components/svg/Snow";
 
-// type IconType = FC<SVGProps<SVGSVGElement>>;
+type IconType = FC<SVGProps<SVGSVGElement>>;
 
 type WeatherInfo = {
-  icon: FC<SVGProps<SVGSVGElement>>;
+  icon: IconType;
   text: string;
 };
 
 const weatherMap: Record<number, WeatherInfo> = {
   0: { icon: SunIcon, text: "Clear sky" },
 
-  1: { icon: PartlyCloudyIcon, text: "Mainly clear" },
-  2: { icon: PartlyCloudyIcon, text: "Partly cloudy" },
+  1: { icon: PartlyCloudyIcon1, text: "Mainly clear" },
+  2: { icon: PartlyCloudyIcon2, text: "Partly cloudy" },
 
   3: { icon: CloudIcon, text: "Overcast" },
 
   45: { icon: FogIcon, text: "Foggy" },
   48: { icon: FogIcon, text: "Freezing fog" },
 
-  51: { icon: DrizzleIcon, text: "Light drizzle" },
-  53: { icon: DrizzleIcon, text: "Moderate drizzle" },
-  55: { icon: DrizzleIcon, text: "Heavy drizzle" },
+  51: { icon: DrizzleIcon1, text: "Light drizzle" },
+  53: { icon: DrizzleIcon2, text: "Moderate drizzle" },
+  55: { icon: DrizzleIcon3, text: "Heavy drizzle" },
 
-  61: { icon: RainIcon, text: "Light rain" },
-  63: { icon: RainIcon, text: "Moderate rain" },
+  61: { icon: DrizzleIcon3, text: "Light rain" },
+  63: { icon: DrizzleIcon3, text: "Moderate rain" },
   65: { icon: RainIcon, text: "Heavy rain" },
 
-  71: { icon: SnowIcon, text: "Light snow" },
-  73: { icon: SnowIcon, text: "Moderate snow" },
-  75: { icon: SnowIcon, text: "Heavy snow" },
+  71: { icon: SnowIcon1, text: "Light snow" },
+  73: { icon: SnowIcon2, text: "Moderate snow" },
+  75: { icon: SnowIcon3, text: "Heavy snow" },
 
-  80: { icon: ShowerIcon, text: "Rain showers" },
-  81: { icon: ShowerIcon, text: "Moderate showers" },
-  82: { icon: ShowerIcon, text: "Heavy showers" },
+  80: { icon: DrizzleIcon3, text: "Rain showers" },
+  81: { icon: DrizzleIcon3, text: "Moderate showers" },
+  82: { icon: RainIcon, text: "Heavy showers" },
 
-  95: { icon: ThunderstormIcon, text: "Thunderstorm" },
-  96: { icon: ThunderstormIcon, text: "Thunderstorm with hail" },
-  99: { icon: ThunderstormIcon, text: "Heavy thunderstorm" },
+  95: { icon: RainIcon, text: "Thunderstorm" },
+  96: { icon: RainIcon, text: "Thunderstorm with hail" },
+  99: { icon: RainIcon, text: "Heavy thunderstorm" },
 };
 export const getWeathercode = (code: number): WeatherInfo => {
   return (
@@ -56,4 +59,3 @@ export const getWeathercode = (code: number): WeatherInfo => {
     }
   );
 };
- 
