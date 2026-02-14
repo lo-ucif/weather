@@ -4,12 +4,11 @@ import { getUserLocation } from "./getUserLocation";
 export interface WeatherData {
   temperature_2m: number;
   relative_humidity_2m: number;
-  precipitation: number;
+  precipitation_probability: number;
   wind_speed_10m: number;
   weather_code: number;
   location: string;
 }
-
 export const getWeather = async (
   customLat?: number,
   customLon?: number,
@@ -36,7 +35,7 @@ export const getWeather = async (
         latitude,
         longitude,
         current:
-          "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,weather_code",
+          "temperature_2m,relative_humidity_2m,precipitation_probability,wind_speed_10m,weather_code",
       },
     });
 
@@ -45,7 +44,7 @@ export const getWeather = async (
     return {
       temperature_2m: current.temperature_2m,
       relative_humidity_2m: current.relative_humidity_2m,
-      precipitation: current.precipitation,
+      precipitation_probability: current.precipitation_probability,
       wind_speed_10m: current.wind_speed_10m,
       weather_code: current.weather_code,
       location,

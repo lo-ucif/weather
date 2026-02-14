@@ -9,9 +9,8 @@ import DrizzleIcon1 from "../components/svg/drizzle01";
 import DrizzleIcon2 from "../components/svg/drizzle02";
 import DrizzleIcon3 from "../components/svg/drizzle03";
 import RainIcon from "../components/svg/Rain";
-import SnowIcon1 from "../components/svg/Snow";
-import SnowIcon2 from "../components/svg/Snow";
-import SnowIcon3 from "../components/svg/Snow";
+import SnowIcon1 from "../components/svg/SnowIcon1";
+import SnowIcon2 from "../components/svg/SnowIcon2";
 
 type IconType = FC<SVGProps<SVGSVGElement>>;
 
@@ -40,8 +39,8 @@ const weatherMap: Record<number, WeatherInfo> = {
   65: { icon: RainIcon, text: "Heavy rain" },
 
   71: { icon: SnowIcon1, text: "Light snow" },
-  73: { icon: SnowIcon2, text: "Moderate snow" },
-  75: { icon: SnowIcon3, text: "Heavy snow" },
+  73: { icon: SnowIcon1, text: "Moderate snow" },
+  75: { icon: SnowIcon2, text: "Heavy snow" },
 
   80: { icon: DrizzleIcon3, text: "Rain showers" },
   81: { icon: DrizzleIcon3, text: "Moderate showers" },

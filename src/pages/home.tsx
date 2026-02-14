@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchWeather = async () => {
       setLoading(true);
-      const data = await getWeather(36.75, 3.06, "Algiers");
+      const data = await getWeather();
       setWeather(data);
       setLoading(false);
     };
@@ -29,7 +29,7 @@ export default function Home() {
   if (!weather) return <div>Error fetching weather</div>;
   const Info = getWeathercode(weather.weather_code);
   return (
-    <div className="flex gap-4 py-3 flex-col flex-nowrap justify-start items-center">
+    <div className="flex gap-4 py-3 flex-col flex-nowrap justify-start items-center sm:py5">
       <Icontxt Icon={Gpsicon} text={weather.location} />
       <Cadremetéo
         text01={weather.temperature_2m}
@@ -39,7 +39,7 @@ export default function Home() {
       <div className="flex  gap-8 w-full justify-between items-center">
         <Cadrethree
           Icon={Precipitationicon}
-          text={weather.precipitation}
+          text={weather.precipitation_probability}
           mark={1}
         />
         <Cadrethree Icon={Windicon} text={weather.wind_speed_10m} mark={2} />
