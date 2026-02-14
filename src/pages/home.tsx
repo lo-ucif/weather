@@ -36,7 +36,7 @@ export default function Home() {
         text02={Info.text}
         Icon={Info.icon}
       />
-      <div className="flex  gap-8 w-full justify-between items-center">
+      <div className="flex flex-col sm:flex-row gap-8 w-full justify-between items-center">
         <Cadrethree
           Icon={Precipitationicon}
           text={weather.precipitation_probability}

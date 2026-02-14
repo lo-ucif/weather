@@ -17,7 +17,7 @@ function App() {
         <Route path="/location" element={<Location />} />
         <Route path="/question" element={<Question />} />
       </Routes>
-      <div className="fixed bottom-0">
+      <div className="sm:fixed sm:bottom-0">
         <Icontxt Icon={Rightsicon} text=" Ahmed Loucif @ all rights reserved" />
       </div>
     </div>
