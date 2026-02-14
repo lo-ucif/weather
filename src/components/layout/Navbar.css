@@ -1,3 +1,39 @@
-.navbar{
-    
+.navbar {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .navbar:hover {
+    padding: 12px 40px;
+    gap: 60px;
+  }
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.itme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.itme:hover {
+  transform: scale(1.4);
+}
+.itme.active {
+  transform: scale(1.2);
+}
+.text {
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

@@ -9,7 +9,7 @@
   line-height: normal;
 
   color-scheme: light dark;
-  background-color: #0e101d;
+  background-color: #1D2837;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,10 +22,10 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  background-image: url("../src/assets/img/Desktop\ -\ home.png");
+  /* background-image: url("../src/assets/img/Desktop\ -\ home.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 html,
 body {

@@ -10,14 +10,19 @@ import Icontxt from "./components/ui/Icontxt";
 function App() {
   return (
     <div className="flex flex-col items-center ">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/location" element={<Location />} />
-        <Route path="/question" element={<Question />} />
-      </Routes>
-      <div className="sm:fixed sm:bottom-0">
+      <div className="fixed sm:relative z-10 ">
+        <Navbar />
+      </div>
+      <div className="mt-14 sm:mt-0">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/location" element={<Location />} />
+          <Route path="/question" element={<Question />} />
+        </Routes>
+      </div>
+
+      <div className="sm:fixed sm:bottom-0 ">
         <Icontxt Icon={Rightsicon} text=" Ahmed Loucif @ all rights reserved" />
       </div>
     </div>
