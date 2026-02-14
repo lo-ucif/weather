@@ -40,7 +40,15 @@ export const getUserLocation = async (): Promise<{
           console.log(error);
         }
       },
-      () => reject("Permission denied"),
+      (error) => {
+        console.log(error);
+        reject("Permission denied");
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0,
+      },
     );
   });
 };
