@@ -2,8 +2,8 @@ export default function Sun() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="250"
-      height="250"
+      width="200"
+      height="200"
       viewBox="0 0 250 250"
       fill="none"
     >

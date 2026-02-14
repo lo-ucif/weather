@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getUserLocation } from "./getUserLocation";
 
 export interface WeatherData {
   temperature_2m: number;
@@ -10,14 +11,20 @@ export interface WeatherData {
   forecastText: string;
 }
 
-const API_URL =
-  "https://api.open-meteo.com/v1/forecast?latitude=36.75&longitude=3.06&current=temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,weather_code";
 export const getWeather = async (): Promise<WeatherData | null> => {
   try {
-    const response = await axios.get(API_URL);
+    const { latitude, longitude, location } = await getUserLocation();
+
+    const response = await axios.get("https://api.open-meteo.com/v1/forecast", {
+      params: {
+        latitude,
+        longitude,
+        current:
+          "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,weather_code",
+      },
+    });
 
     const current = response.data.current;
-    
 
     let forecastText = "";
 
@@ -28,10 +35,10 @@ export const getWeather = async (): Promise<WeatherData | null> => {
       case current.precipitation > 0:
         forecastText = "Light rain expected today.";
         break;
-      case current.weatherCode === 0:
+      case current.weather_code === 0:
         forecastText = "Clear sky today.";
         break;
-      case current.weatherCode >= 1 && current.weatherCode <= 3:
+      case current.weather_code >= 1 && current.weather_code <= 3:
         forecastText = "Partly cloudy today.";
         break;
       default:
@@ -44,8 +51,8 @@ export const getWeather = async (): Promise<WeatherData | null> => {
       precipitation: current.precipitation,
       wind_speed_10m: current.wind_speed_10m,
       weather_code: current.weather_code,
-      location: "Constantine, Algeria",
-      forecastText: forecastText,
+      location: location,
+      forecastText,
     };
   } catch (error) {
     console.error("Error fetching weather:", error);

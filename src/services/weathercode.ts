@@ -1,5 +1,5 @@
-import SunIcon from "../components/svg/sun";
-import CloudIcon from "../components/svg/cloudy";
+import SunIcon from "../components/svg/Sun";
+import CloudIcon from "../components/svg/Cloudy";
 import RainIcon from "../components/svg/Rain";
 import SnowIcon from "../components/svg/Snow";
 import FogIcon from "../components/svg/Fog";

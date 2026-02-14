@@ -6,7 +6,7 @@ import Locationicon from "../icon/Locationicon";
 import Queastionicon from "../icon/Queastionicon";
 export default function Navbar() {
   return (
-    <div className="flex flex-row w-fit py-3 px-10 gap-20 glass-card justify-center items-center rounded-[40px] ">
+    <div className="flex flex-row w-fit py-3 px-10 gap-16 glass-card justify-center items-center rounded-[40px] ">
       <Link to="/">
         <Homeicon />
       </Link>
