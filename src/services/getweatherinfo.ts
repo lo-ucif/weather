@@ -8,7 +8,6 @@ export interface WeatherData {
   wind_speed_10m: number;
   weather_code: number;
   location: string;
-  forecastText: string;
 }
 
 export const getWeather = async (): Promise<WeatherData | null> => {
@@ -26,25 +25,6 @@ export const getWeather = async (): Promise<WeatherData | null> => {
 
     const current = response.data.current;
 
-    let forecastText = "";
-
-    switch (true) {
-      case current.precipitation > 5:
-        forecastText = "Expect heavy rain today.";
-        break;
-      case current.precipitation > 0:
-        forecastText = "Light rain expected today.";
-        break;
-      case current.weather_code === 0:
-        forecastText = "Clear sky today.";
-        break;
-      case current.weather_code >= 1 && current.weather_code <= 3:
-        forecastText = "Partly cloudy today.";
-        break;
-      default:
-        forecastText = "Weather is normal today.";
-    }
-
     return {
       temperature_2m: current.temperature_2m,
       relative_humidity_2m: current.relative_humidity_2m,
@@ -52,7 +32,6 @@ export const getWeather = async (): Promise<WeatherData | null> => {
       wind_speed_10m: current.wind_speed_10m,
       weather_code: current.weather_code,
       location: location,
-      forecastText,
     };
   } catch (error) {
     console.error("Error fetching weather:", error);

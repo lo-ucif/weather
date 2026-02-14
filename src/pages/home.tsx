@@ -8,7 +8,8 @@ import Humidityicon from "../components/icon/Humidityicon";
 import { useEffect, useState } from "react";
 import { getWeather } from "../services/getweatherinfo";
 import type { WeatherData } from "../services/getweatherinfo";
-import { getWeatherIcon } from "../services/weathercode";
+import { getWeathercode } from "../services/weathercode";
+import Loading from "../components/layout/Loading";
 
 export default function Home() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -24,16 +25,16 @@ export default function Home() {
     fetchWeather();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (!weather) return <div>Error fetching weather</div>;
-  const icon = getWeatherIcon(weather.weather_code);
+  const Info = getWeathercode(weather.weather_code);
   return (
     <div className="flex gap-4 py-3 flex-col flex-nowrap justify-start items-center">
       <Icontxt Icon={Gpsicon} text={weather.location} />
       <Cadremetéo
         text01={weather.temperature_2m}
-        text02={weather.forecastText}
-        Icon={icon}
+        text02={Info.text}
+        Icon={Info.icon}
       />
       <div className="flex  gap-8 w-full justify-between items-center">
         <Cadrethree
