@@ -9,7 +9,7 @@
   line-height: normal;
 
   color-scheme: light dark;
-  background-color: #1D2837;
+  background-color: #1d2837;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,21 +18,28 @@
   --secondary-color: #0e101d;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  /* background-image: url("../src/assets/img/Desktop\ -\ home.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-}
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url("../src/assets/img/Desktop - home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  body {
+    height: fit-content;
+  }
 }
 
 .glass-card {

@@ -5,11 +5,10 @@ import Search from "./pages/Search";
 import Location from "./pages/Location";
 import Question from "./pages/Question";
 import Navbar from "./components/layout/Navbar";
-import Rightsicon from "./components/icon/Rightsicon";
-import Icontxt from "./components/ui/Icontxt";
+
 function App() {
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center w-full ">
       <div className="fixed sm:relative z-10 ">
         <Navbar />
       </div>
@@ -20,10 +19,6 @@ function App() {
           <Route path="/location" element={<Location />} />
           <Route path="/question" element={<Question />} />
         </Routes>
-      </div>
-
-      <div className="sm:fixed sm:bottom-0 ">
-        <Icontxt Icon={Rightsicon} text=" Ahmed Loucif @ all rights reserved" />
       </div>
     </div>
   );
