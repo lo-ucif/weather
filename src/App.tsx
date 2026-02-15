@@ -9,7 +9,7 @@ import Navbar from "./components/layout/Navbar";
 function App() {
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="fixed sm:relative z-10 w-[85%]">
+      <div className="fixed sm:relative z-10 w-[85%] sm:w-full sm:flex justify-center">
         <Navbar />
       </div>
       <div className="mt-14 sm:mt-0 w-full">
