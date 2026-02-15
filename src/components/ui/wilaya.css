@@ -1,0 +1,6 @@
+.wilayacss {
+  transition: all 0.3s ease;
+}
+.wilayacss:hover {
+  scale: 1.1;
+}
