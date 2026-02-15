@@ -9,11 +9,12 @@ import Refrechbut from "../icon/refrechbut";
 import { useState } from "react";
 
 export default function Navbar() {
-  // const [nameAct, setNameAct] = useState<string>("home");
+  const [nameAct, setNameAct] = useState<string>("home");
   const [isopen, setopen] = useState<boolean>(false);
   const handlclick = () => {
     setopen(!isopen);
   };
+
   return (
     <div>
       <div className="navbar hidden sm:flex flex-row w-fit py-3 px-10 gap-8 sm:gap-8 glass-card justify-center items-center rounded-[40px]">
@@ -54,11 +55,11 @@ export default function Navbar() {
         </NavLink>
       </div>
       {/* nanbar phone */}
-      <div className="flex sm:hidden glass-card justify-between w-full gap-22 p-2 items-center text-xl font-medium">
+      <div className="flex sm:hidden glass-card justify-between w-full  p-2 items-center text-xl font-medium">
         <button onClick={handlclick}>
           <Threelineicon />
         </button>
-        <div>home</div>
+        <div className="w-16">{nameAct}</div>
         <Refrechbut />
       </div>
       {/* dachboard */}
@@ -68,7 +69,10 @@ export default function Navbar() {
         >
           <NavLink to="/">
             {({ isActive }) => (
-              <div className={`itme2  ${isActive ? "active" : ""}`}>
+              <div
+                onClick={() => setNameAct("home")}
+                className={`itme2  ${isActive ? "active" : ""}`}
+              >
                 <Homeicon />
                 <span className="text">home</span>
               </div>
@@ -76,7 +80,10 @@ export default function Navbar() {
           </NavLink>
           <NavLink to="/search">
             {({ isActive }) => (
-              <div className={`itme2  ${isActive ? "active" : ""}`}>
+              <div
+                onClick={() => setNameAct("search")}
+                className={`itme2  ${isActive ? "active" : ""}`}
+              >
                 <Searchicon />
                 <span className="text">search</span>
               </div>
@@ -84,7 +91,10 @@ export default function Navbar() {
           </NavLink>
           <NavLink to="/location">
             {({ isActive }) => (
-              <div className={`itme2  ${isActive ? "active" : ""}`}>
+              <div
+                onClick={() => setNameAct("location")}
+                className={`itme2  ${isActive ? "active" : ""}`}
+              >
                 <Locationicon />
                 <span className="text">location</span>
               </div>
@@ -92,7 +102,10 @@ export default function Navbar() {
           </NavLink>
           <NavLink to="/question">
             {({ isActive }) => (
-              <div className={`itme2  ${isActive ? "active" : ""}`}>
+              <div
+                onClick={() => setNameAct("help")}
+                className={`itme2  ${isActive ? "active" : ""}`}
+              >
                 <Queastionicon />
                 <span className="text">help</span>
               </div>

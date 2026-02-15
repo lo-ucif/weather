@@ -23,7 +23,7 @@ export default function Cadrethree({ Icon, text, mark }: IconatxtProps) {
   }
 
   return (
-    <div className="flex flex-col justify-center  items-center gap-6 glass-card rounded-[40px] p-7.5 w-full h-fit">
+    <div className="flex flex-row sm:flex-col justify-between sm:justify-center  items-center gap-6 glass-card rounded-[40px] p-5 w-full sm:h-fit h-18">
       <Icon />
       <div className="txt04">
         {text}

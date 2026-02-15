@@ -29,7 +29,7 @@ export default function Home() {
   if (!weather) return <div>Error fetching weather</div>;
   const Info = getWeathercode(weather.weather_code);
   return (
-    <div className="flex gap-4 py-3 flex-col flex-nowrap justify-start items-center sm:py5">
+    <div className="flex gap-4 py-2 flex-col flex-nowrap justify-start items-center sm:py5 w-full">
       <Icontxt Icon={Gpsicon} text={weather.location} />
       <Cadremetéo
         text01={weather.temperature_2m}

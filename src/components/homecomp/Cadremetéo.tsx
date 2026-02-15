@@ -8,7 +8,7 @@ type texttwo = {
 export default function Cadremetéo({ text01, text02, Icon }: texttwo) {
   return (
     <div className="flex flex-col justify-center items-center self-center rounded-[80px] glass-card w-full px-12 sm:px-80 pb-7 gap-3 sm:gap-0">
-      <Icon className="w-16 h-16" />
+      <Icon className="w-12 h-12" />
       <div className="txt02">{text01} °C</div>
       <div className="txt03">{text02}</div>
     </div>

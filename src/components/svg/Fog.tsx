@@ -1,4 +1,4 @@
 import img from "../../assets/5.png";
 export default function Fog() {
-  return <img className="w-50 h-50" src={img} alt="" />;
+  return <img className="w-40 h-40" src={img} alt="" />;
 }
