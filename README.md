@@ -1,4 +1,5 @@
 🌤 Weather App – React + TypeScript
+
 📌 Project Overview
 This is a modern web application that displays real-time weather data using an external API.
 The application allows users to search for any city and dynamically retrieve its current weather information.
